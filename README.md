@@ -6,14 +6,6 @@ Ami is an AI-powered coding agent designed for frontend developers. It understan
 
 **Learn more in the [official documentation](https://ami.dev/docs)**.
 
-## Features
-
-- **Chat with Your Codebase** — Describe desired changes in plain English; Ami generates the code and applies it directly to your files
-- **Real-Time Previews** — See live code edits with a built-in browser preview as changes occur
-- **Review and Commit** — Track every change, review diffs, accept or reject edits, and commit directly from the interface
-- **Integrated Editor and Terminal** — Edit files, run commands, and view outputs without leaving Ami
-- **Contextual Understanding** — Drag and drop files or reference them directly for more accurate results
-
 ## Get started
 
 1. Install Ami:
@@ -40,11 +32,11 @@ ami --version
 
 ## Pricing
 
-| Plan | Price | Details |
-|------|-------|---------|
-| **Free** | $0/month | 5 requests/day, all models, real-time preview, community support |
-| **Pro** | $20/month + usage | API requests at cost, $20 credits included, priority support, early access |
-| **Enterprise** | Custom | On-premise deployment, bring your own models, custom integrations, dedicated support |
+| Plan           | Price             | Details                                                                              |
+| -------------- | ----------------- | ------------------------------------------------------------------------------------ |
+| **Free**       | $0/month          | 5 requests/day, all models, real-time preview, community support                     |
+| **Pro**        | $20/month + usage | API requests at cost, $20 credits included, priority support, early access           |
+| **Enterprise** | Custom            | On-premise deployment, bring your own models, custom integrations, dedicated support |
 
 See the [pricing page](https://ami.dev/pricing) for full details.
 
