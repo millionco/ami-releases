@@ -1,8 +1,10 @@
 # Ami
 
-Ami is an AI-powered coding agent designed for frontend developers. It understands your codebase, generates code from natural language, and shows real-time previews — all in one seamless interface.
+Run coding agents on your desktop without breaking your flow.
 
-**Learn more in the [official documentation](https://ami.dev/docs)**.
+- **Local**: Agents run on your machine with full access and context
+- **Native**: Feels like a natural desktop app
+- **Flexible**: Handle tasks from seconds to hours
 
 ## Install
 
@@ -14,12 +16,11 @@ brew install --cask millionco/ami/ami
 
 ### Manual download
 
-Download the latest release from the [releases page](https://github.com/millionco/ami-releases/releases).
+Download from the [releases page](https://github.com/millionco/ami-releases/releases).
 
-## Reporting Bugs
+## Links
 
-File a [GitHub issue](https://github.com/millionco/ami-releases/issues) to report bugs or request features.
-
-## Privacy
-
-For information on how we handle your data, see our [Privacy Policy](https://ami.dev/privacy).
+- [Website](https://ami.dev)
+- [Documentation](https://ami.dev/docs)
+- [Report a bug](https://github.com/millionco/ami-releases/issues)
+- [Privacy Policy](https://ami.dev/privacy)
