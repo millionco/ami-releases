@@ -1,0 +1,41 @@
+name: Update Homebrew Cask
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  update-cask:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout homebrew-ami
+        uses: actions/checkout@v4
+        with:
+          repository: millionco/homebrew-ami
+          token: ${{ secrets.HOMEBREW_TOKEN }}
+
+      - name: Get release info
+        id: release
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Download and hash macOS ZIP
+        id: hash
+        run: |
+          URL="https://github.com/millionco/ami-releases/releases/download/${{ github.ref_name }}/ami-macos-arm64-${{ steps.release.outputs.version }}.zip"
+          SHA256=$(curl -sL "$URL" | shasum -a 256 | cut -d ' ' -f 1)
+          echo "sha256=$SHA256" >> $GITHUB_OUTPUT
+
+      - name: Update Cask formula
+        run: |
+          sed -i "s/version \".*\"/version \"${{ steps.release.outputs.version }}\"/" Casks/ami.rb
+          sed -i "s/sha256 \".*\"/sha256 \"${{ steps.hash.outputs.sha256 }}\"/" Casks/ami.rb
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add Casks/ami.rb
+          git commit -m "Update ami cask to v${{ steps.release.outputs.version }}"
+          git push
